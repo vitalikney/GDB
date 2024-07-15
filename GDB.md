@@ -5,6 +5,7 @@
 ## Оглавление
 
 - [Команды GDB](#команды)
+- [Начать построчный дебагинг](#построчный-дебагинг)
 
 ## Команды
 
@@ -21,17 +22,49 @@ gdb <file_name>
 ```
 run
 ```
+Однострочный шаг с заходом в функции (step):
+```
+step
+```
+Однострочный шаг без захода в функции (next):
+```
+next
+```
+Просмотреть код функции:
+```
+list <function_name>
+```
 Создание точки остановки (breakpoint):
 ```
 break <file_name.cpp>:<line_number> 
 break <file_name.cpp>:<function_name> 
-```
-Информация о созданных точек остановок (breakpoint):
-```
-info breakpoint
+break <function_name>
 ```
 Удалить точку остановки (breakpoint):
 ```
 clear <file_name.cpp>:<line_number> 
 clear <file_name.cpp>:<function_name> 
 ```
+Информация о созданных точек остановок (breakpoint):
+```
+info breakpoint
+```
+Включить/Выключить точку остановки (breakpoint):
+```
+enable/disable <breakpoint_number>
+```
+
+## Построчный дебагинг
+Запустить GDB:
+```
+gdb <file_name>
+```
+Установить точку остановки на начальную точку отладки (обыяно это функция main()):
+```
+break main
+```
+Запустить программу:
+```
+run
+```
+Далее выбрать, как делать шаг - с заходом в функцию (step) или без захода в функцию (next)
