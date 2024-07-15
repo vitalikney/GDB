@@ -30,6 +30,14 @@ step
 ```
 next
 ```
+Узнать значение переменной:
+```
+print <variable_name>
+```
+Информация о регистрах:
+```
+info registers
+```
 Просмотреть код функции:
 ```
 list <function_name>
